@@ -5,6 +5,7 @@
 #is checked using an https request for efficiency reservoir sampling is used.
 import json, os, urllib, random, argparse 
 import urllib.request
+import ssl
 
 #This function will check if each tweet is live by attempting to connect to that
 #tweet's page.The script then determines if the tweet is still live by comparing
@@ -13,10 +14,11 @@ import urllib.request
 def tweet_is_live(ID:str, username:str, verbose=False) -> bool:
     #creates the URL of the tweet from specified ID and username
     url = 'https://twitter.com/' + username + '/status/' + ID 
+    gcontext = ssl.SSLContext()
     if verbose:
         print("URL: " + url)
     try:
-        page = urllib.request.urlopen(url) #contact the web page
+        page = urllib.request.urlopen(url, context=gcontext) #contact the web page
         if ID in page.geturl(): #compare the final destination URL to the original
             #print(url + ' is live')
             return 1
