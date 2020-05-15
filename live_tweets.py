@@ -135,7 +135,7 @@ if __name__ == '__main__':
     parser.add_argument('-rs', '--reservoir_size', type=int, nargs=1, help="Number of tweets to check if live (default=2000)", default=[2000])
     parser.add_argument('-ss', '--sample_size', type=int, nargs=1, help="Size of generated sample (default=500)", default=[500])
     parser.add_argument('-v', '--verbose', action="store_true", help="Add additional output statements",default=False)
-    parser.add_argument('-vv', '--very_verbose', action="store_true", help="Add additional output statements per tweet checked",default=False)
+    parser.add_argument('-ev', '--very_verbose', action="store_true", help="Add additional output statements per tweet checked",default=False)
     parser.add_argument('-o', '--output_file', type=str, nargs=1, help="Name for output file to write sample to",default=["placeholder"])
 
     args = parser.parse_args()
