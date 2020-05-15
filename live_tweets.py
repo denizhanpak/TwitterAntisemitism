@@ -52,7 +52,7 @@ def read_files(directory_path:str, sample_size:int, verbose:bool) -> list :
     #Open argument directory
     for fileobject in os.listdir(folder): 
         filename = os.fsdecode(fileobject) 
-        if ".json" in filename:
+        if "ex" in filename:
             if verbose:
                 print("Reading file: " + filename)
             #Open file in directory and apply reservoir sampling
@@ -156,5 +156,8 @@ if __name__ == '__main__':
         print("Filtering live tweets....")
     
     tweets = live_tweets(tweets_to_sample, verbose, vverbose)
-    sampling = random.sample(tweets, sample_size)
+    try:
+        sampling = random.sample(tweets, sample_size)
+    except:
+        print("Not enough tweets using all live.")
     writeFile(sampling, output, verbose)
