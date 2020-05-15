@@ -160,4 +160,5 @@ if __name__ == '__main__':
         sampling = random.sample(tweets, sample_size)
     except:
         print("Not enough tweets using all live.")
+        sampling = tweets
     writeFile(sampling, output, verbose)
