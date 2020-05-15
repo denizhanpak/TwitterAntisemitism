@@ -20,7 +20,7 @@ def createCSV(path:str, out:str):
             except Exception as e:
                 pass
 
-    with open(out, "w") as outfile:
+    with open("./" + out, "w") as outfile:
         csvwriter = csv.writer(outfile, delimiter=",", quotechar='"')
         csvwriter.writerow(["TweetID", "Username", "Text", "CreateDate"])
         for line in to_write:
