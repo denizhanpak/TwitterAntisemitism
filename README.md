@@ -8,6 +8,7 @@ Pre-requisites to run the following files:
 2) Lang Detect - In order to filter the English/Non-English tweets, we have used the langdetect package. This needs to be installed on the instance where you wish to run the script.The syntax should be something similar to:
       #### python3 -m pip install langdetect
 3) Tweepy - This module checks if the Tweets are live or not.
+     #### python3 -m pip install tweepy
 
 
 
